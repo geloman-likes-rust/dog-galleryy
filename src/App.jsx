@@ -64,7 +64,7 @@ function App() {
       <main className="page__main">
         <Grid data={dogBreed} />
       </main>
-      <footer className="page__footer">This is a Footer</footer>
+      <footer className="page__footer">This is a Footer made by Gelo</footer>
     </div>
   );
 }
