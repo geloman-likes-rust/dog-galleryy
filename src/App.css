@@ -50,7 +50,7 @@
   height: 100px;
   background: var(--footer-bg);
   color: white;
-  font-size: clamp(25px, 5vw, 40px);
+  font-size: clamp(16px, 5vw, 40px);
   font-weight: bold;
   width: 100%;
 }
@@ -124,15 +124,6 @@
 .header__search-wrapper {
   max-width: 1200px;
   margin-inline: auto;
-}
-
-@keyframes blur {
-  0% {
-    filter: blur(1vh);
-  }
-  100% {
-    filter: blur(0);
-  }
 }
 
 @media (max-width: 1150px) {
