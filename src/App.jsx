@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./App.css";
 import useDogList from "./hooks/useDogList";
 import handleSearch from "./event-handlers/handle-search";
@@ -13,6 +13,7 @@ function App() {
   const [showBreedList, setShowBreedList] = useState(false);
   const [filteredBreedList, setFilteredBreedList] = useState([]);
   const isScrollingDown = usePageScroll();
+  const inputRef = useRef();
   useEffect(() => {
     if (!data) return;
     setFilteredBreedList((filteredBreedList) => [
@@ -27,6 +28,7 @@ function App() {
         <div className="header__search-wrapper">
           <div className="header__search">
             <input
+              ref={inputRef}
               onChange={handleSearch(setFilteredBreedList, data)}
               onFocus={() => setShowBreedList(true)}
               onBlur={() => {
@@ -45,6 +47,7 @@ function App() {
                   <div
                     onClick={() => {
                       setActiveBreed(item);
+                      inputRef.current.value = item;
                       setShowBreedList(false);
                     }}
                     className="list__item"
