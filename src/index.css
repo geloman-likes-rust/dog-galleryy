@@ -13,4 +13,7 @@
 
 body {
   background: var(--light-theme-bg);
+  -webkit--transfrom: scale(1);
+  -ms--transfrom: scale(1);
+  transform: scale(1);
 }
