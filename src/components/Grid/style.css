@@ -5,6 +5,7 @@
   max-width: 1200px;
   margin-inline: auto;
   padding-block: 20px;
+  user-select: none;
 }
 
 .grid__item {
