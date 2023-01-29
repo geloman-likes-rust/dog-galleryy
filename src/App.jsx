@@ -16,6 +16,7 @@ function App() {
   const inputRef = useRef();
   useEffect(() => {
     if (!data) return;
+    inputRef.current.value = activeBreed;
     setFilteredBreedList((filteredBreedList) => [
       ...filteredBreedList,
       ...data,
@@ -38,7 +39,6 @@ function App() {
               }}
               className="search__input"
               type="text"
-              placeholder={activeBreed}
               spellCheck={false}
             />
             <div className={`search__list ${showBreedList && "show"}`}>
