@@ -1,0 +1,23 @@
+.main__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2px;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-block: 20px;
+}
+
+.grid__item {
+}
+
+.item__image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .main__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

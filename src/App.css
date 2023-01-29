@@ -1,0 +1,159 @@
+:root {
+  --header-bg: #fda769;
+  --main-bg: ;
+  --footer-bg: #0a2647;
+  --header-height: 80px;
+}
+.page {
+  position: relative;
+}
+.page__header {
+  height: var(--header-height);
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 20px;
+  transition: transform 300ms ease;
+  background: white;
+  z-index: 999;
+  box-shadow: 0 0px 5px;
+  position: fixed;
+}
+
+.page__header::before {
+  position: absolute;
+  content: "dog gallery";
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: clamp(25px, 5vw, 40px);
+}
+
+.page__header::after {
+  content: url("./assets/paws.svg");
+  left: 50%;
+  top: 50%;
+  display: none;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.page__main {
+  margin-top: 80px;
+  min-height: 100vh;
+}
+.page__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  background: var(--footer-bg);
+  color: white;
+  font-size: clamp(25px, 5vw, 40px);
+  font-weight: bold;
+  width: 100%;
+}
+
+.header__search {
+  display: flex;
+  flex-direction: column;
+  max-width: 170px;
+  align-items: center;
+}
+.search__list {
+  display: none;
+  width: 100%;
+  height: 300px;
+  position: relative;
+  overflow: auto;
+  background: white;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-shadow: 0px 0px 3px;
+}
+
+.search__list::-webkit-scrollbar {
+  width: 5px;
+}
+.search__list::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+.search__list.show {
+  display: block;
+}
+
+.list__item {
+  padding-block: 10px;
+  padding-inline: 10px;
+  cursor: pointer;
+}
+
+.page__header.hide {
+  transform: translateY(calc(-1 * var(--header-height)));
+}
+
+.page__header.hide
+  > .header__search-wrapper
+  > .header__search
+  > .search__input
+  + .search__list {
+  display: none;
+}
+
+.search__input {
+  border: none;
+  width: 100%;
+  text-indent: 10px;
+  font-size: 15px;
+  color: black;
+  font-weight: bold;
+  padding-block: 5px;
+  box-shadow: 0px 0px 3px;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+.search__input::placeholder {
+  color: black;
+  font-weight: bold;
+}
+
+.header__search-wrapper {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(1vh);
+  }
+  100% {
+    filter: blur(0);
+  }
+}
+
+@media (max-width: 1150px) {
+  .page__header::before {
+    display: none;
+  }
+  .page__header::after {
+    display: block;
+  }
+}
+
+@media (max-width: 830px) {
+  .page__header::after {
+    display: block;
+    top: 50%;
+    left: 85%;
+    transform: translate(-75%, -50%);
+  }
+}
+
+@media (max-width: 280px) {
+  .page__header::after {
+    display: none;
+  }
+}
