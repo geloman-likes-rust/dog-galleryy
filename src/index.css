@@ -15,3 +15,15 @@ body {
   background: var(--light-theme-bg);
   user-select: none;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #d9acf5;
+}
+::-webkit-scrollbar-track {
+  background: white;
+}
