@@ -8,7 +8,6 @@ import Grid from "./components/Grid";
 function App() {
   const [activeBreed, setActiveBreed] = useState("pug");
   const [data, error] = useDogList();
-  const [loadMore, setLoadMore] = useState(0);
   const dogBreed = useDogBreed(activeBreed);
   const [showBreedList, setShowBreedList] = useState(false);
   const [filteredBreedList, setFilteredBreedList] = useState([]);

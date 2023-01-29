@@ -12,6 +12,7 @@
   animation: blur 600ms ease;
   z-index: 1;
   position: relative;
+  overflow: hidden;
 }
 
 .grid__item::before {
@@ -26,6 +27,12 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  cursor: pointer;
+  transition: transform 500ms ease-out;
+}
+
+.item__image:hover {
+  transform: scale(1.05);
 }
 
 .grid__item.hide {
