@@ -91,6 +91,10 @@
   z-index: 10;
 }
 
+.list__item:hover {
+  background: rgb(211, 211, 211);
+}
+
 .page__header.hide {
   transform: translateY(calc(-1 * var(--header-height)));
 }
