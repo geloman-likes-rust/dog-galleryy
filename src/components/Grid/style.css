@@ -8,6 +8,18 @@
 }
 
 .grid__item {
+  display: block;
+  animation: blur 600ms ease;
+  z-index: 1;
+  position: relative;
+}
+
+.grid__item::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.486);
+  inset: 0;
+  z-index: -1;
+  position: absolute;
 }
 
 .item__image {
@@ -16,8 +28,21 @@
   object-fit: cover;
 }
 
+.grid__item.hide {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .main__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(1vh);
+  }
+  100% {
+    filter: blur(0);
   }
 }
